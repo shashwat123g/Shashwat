@@ -1,0 +1,20 @@
+﻿
+@model  Pie
+
+
+
+<h1>Details</h1>
+<div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@Model.ImageUrl" alt="@Model.Name">
+            <div class="caption-full">
+                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+                <h3>
+                    <a >@Model.Name</a>
+                </h3>
+               <p>@Model.ShortDescription</p>
+                <p>@Model.LongDescription</p>
+            </div>
+        </div>
+    </div>
+
