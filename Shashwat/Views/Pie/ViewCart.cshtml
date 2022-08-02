@@ -1,0 +1,49 @@
+﻿<h1>Cart Items</h1>
+
+<table class="table table-striped table-dark">
+        <thead>
+            <tr>
+              <th scope="col">S. No.</th>
+              <th scope="col">PieId</th>
+              <th scope="col">Pie Name</th>
+               <th scope="col">Pie Price</th>
+               <th scope="col">Quantity</th>
+              
+            @if(ViewBag.Uid=="admin@gmail.com")
+            {
+                <th scope="col">UserID</th>
+            }
+            <th scope="col">Remove</th>
+            </tr>
+          </thead>
+
+    @{
+        decimal price = 0;
+        int s = 0;
+    }
+    @foreach (var item in Model)
+    {
+
+
+        <tr>@{
+                price = price + item.PiePrice*@item.Quantity;
+                s++;
+          }
+                    <td>@s</td>
+                    <td>@item.PieId</td>
+                    <td>@item.PieName</td>
+                    <td>$@item.PiePrice</td>
+                    <td><a asp-controller="Cart" asp-action="Increase" asp-route-id="@item.OrderId" > <h3 style="display:inline-block"> +  </h3>  </a>@item.Quantity<a asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.OrderId"> <h3 style="display:inline-block">  - </h3> </a></td>
+                    @if(ViewBag.Uid=="admin@gmail.com")
+                    {
+                    <th scope="col">@item.CartID</th>
+                    }
+                    <td><a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.OrderId">Remove</a></td>
+      </tr>    
+
+       
+
+
+    }
+  </table>
+  <h3 style="text-align:center">Total Price = $@price</h3>

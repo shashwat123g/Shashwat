@@ -2,8 +2,49 @@
     ViewData["Title"] = "Home Page";
 }
 
+@using Shashwat.ViewModel
+<style>
+        body{background-image: url('/images/image.jpg');
+         background-size: cover;
+  background-position: center;
+  background-attachment: fixed;}
+  </style>
+ <center>
+     
+     <div class="my">
+    
+    
+    </div></center>
+    
+    
+ <div class="text-center" >
+     <div class="mi">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+     <img  alt="Shashwat's Pie Shop'" src="~/images/new.jpg"  width ="200"  height="300";/>
+    
+    </div></div>
+    
+    
+    
+    
+
+
+@*@foreach (var pie in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@pie.ImageThumbnailUrl" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@pie.Price.ToString("c")</h3>
+                <h3>
+               <tr>   <td>  <a asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a></td></tr>
+                </h3>
+                <p>@pie.ShortDescription</p>
+                 <p>@pie.LongDescription</p>
+            </div>
+        </div>
+    </div>
+}*@
+</>
+
+

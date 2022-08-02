@@ -1,19 +1,44 @@
 ﻿@using Shashwat.ViewModel
 
 
+@*<div class="my">
+<center> <img  alt="Shashwat's Pie Shop'" src="~/images/large (5).png" width="100" height="100" ;/></center>
+</div>*@
 
-@foreach (var pie in Model.Pies)
-{
+@*{
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-            <img src="@pie.ImageThumbnailUrl" alt="">
+            <img src="@Model.ImageThumbnailUrl" alt="" height="200" width="200" display="inline">
             <div class="caption">
-                <h3 class="pull-right">@pie.Price.ToString("c")</h3>
+                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
                 <h3>
-                    <a>@pie.Name</a>
+                    <a>@Model.Name</a>
                 </h3>
-                <p>@pie.ShortDescription</p>
+                <p>@Model.ShortDescription</p>
+                <a asp-controller="Pie" asp-action="AddToCart" asp-route-id="@Model.PieId"class="btn btn-primary">AddToCart</a>
             </div>
         </div>
     </div>
-}
+       
+}*@
+<div class="row">
+     @foreach (var pie in Model)
+    {
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+          <img src="@pie.ImageThumbnailUrl" class="card-img-top" alt="...">
+        <h5 class="card-title"><a asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a></h5>
+        <p class="card-text">@pie.ShortDescription</p>
+        <h5>Rs: @pie.Price</h5>
+        <a asp-controller="pie" asp-action="AddToCart" asp-route-id="@pie.PieId"class="btn btn-primary">AddToCart</a>
+         <a  asp-controller="Pie" asp-action="Delete"  asp-route-id="@pie.PieId"class="btn btn-primary"> Delete </a>
+          <a asp-controller="pie" asp-action="Edit" asp-route-id="@pie.PieId"class="btn btn-primary">Edit</a>
+         
+
+      </div>
+    </div>
+  </div>
+ }
+</div>
+ 

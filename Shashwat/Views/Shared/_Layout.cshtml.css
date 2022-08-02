@@ -38,11 +38,25 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
+/*.i{
+    height:10px;
 
+}
+*/
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.container-fluid {
+    background-color: aqua;
+    height:100px
+    
+}
+.z {
+    width: 100%;
+    z-index: 0;
 }
